@@ -5,11 +5,30 @@ pool:
   name: Pool-test
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+  - stage: Build
+    displayName: 'CI'
+    jobs:
+    - job: Dependencias
+      displayName: 'Instalacion de dependencias'
+      steps:
+      - script: |
+          echo "Instalacion de dependencias..."
+        displayName: 'instalacion la aplicación'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    - job: Test
+      displayName: 'Pruebas de testeo'
+      steps:
+      - script: |
+          echo "Testeando el codigo..."
+        displayName: 'Testeando el codigo'
+
+  - stage: Deploy
+    displayName: 'Deploy Stage'
+    jobs:
+    - job: DeployJob
+      displayName: 'Desplegando'
+      steps:
+      - script: |
+          echo "Desplegando la aplicacion..."
+        displayName: 'deploy del entorno'
