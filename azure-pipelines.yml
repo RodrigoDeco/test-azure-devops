@@ -5,6 +5,8 @@ pool:
   name: Pool-test
   vmImage: ubuntu-latest
 
+# ETAPA DE CI
+
 stages:
   - stage: Build
     displayName: 'CI'
@@ -22,6 +24,8 @@ stages:
       - script: |
           echo "Testeando el codigo..."
         displayName: 'Testeando el codigo'
+
+# ETAPA DE CD
 
   - stage: Deploy
     displayName: 'Deploy Stage'
