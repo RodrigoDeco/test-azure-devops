@@ -14,7 +14,7 @@ stages:
     - job: Scripts
       displayName: 'Scripts'
       steps:
-      - checkout: self
+#      - checkout: self
       - script: |
           echo $(System.DefaultWorkingDirectory)
           echo $(Build.SourcesDirectory)
