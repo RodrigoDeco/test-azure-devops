@@ -3,7 +3,6 @@ trigger:
 
 pool:
   name: Pool-test
-  vmImage: ubuntu-latest
 
 # ETAPA DE CI
 
@@ -16,7 +15,6 @@ stages:
       steps:
 #      - checkout: self
       - script: |
-          echo $(System.DefaultWorkingDirectory)
           echo $(Build.SourcesDirectory)
 
 # ETAPA DE CD
