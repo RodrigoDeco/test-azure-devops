@@ -19,9 +19,9 @@ stages:
 
 # ETAPA DE CD
 
-  - stage: Deploy
-    displayName: 'Deploy Stage'
-    jobs:
-    - job: DeployJob
-      displayName: 'Desplegando'
-      steps:
+#  - stage: Deploy
+#    displayName: 'Deploy Stage'
+#    jobs:
+#    - job: DeployJob
+#      displayName: 'Desplegando'
+#      steps:
