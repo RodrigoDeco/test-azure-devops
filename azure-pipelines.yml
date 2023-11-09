@@ -1,3 +1,6 @@
+trigger:
+- master
+
 pool:
   name: Pool-test
   vmImage: ubuntu-latest
@@ -8,19 +11,11 @@ stages:
   - stage: Build
     displayName: 'CI'
     jobs:
-    - job: Dependencias
-      displayName: 'Instalacion de dependencias'
+    - job: Scripts
+      displayName: 'Scripts'
       steps:
       - script: |
-          echo "Instalacion de dependencias..."
-        displayName: 'instalacion la aplicación'
-
-    - job: Test
-      displayName: 'Pruebas de testeo'
-      steps:
-      - script: |
-          echo "Testeando el codigo..."
-        displayName: 'Testeando el codigo'
+          echo $(System.DefaultWorkingDirectory)
 
 # ETAPA DE CD
 
@@ -30,6 +25,3 @@ stages:
     - job: DeployJob
       displayName: 'Desplegando'
       steps:
-      - script: |
-          echo "Desplegando la aplicacion..."
-        displayName: 'deploy del entorno'
