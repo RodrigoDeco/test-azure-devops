@@ -14,8 +14,10 @@ stages:
     - job: Scripts
       displayName: 'Scripts'
       steps:
+      - checkout: self
       - script: |
           echo $(System.DefaultWorkingDirectory)
+          echo $(Build.SourcesDirectory)
 
 # ETAPA DE CD
 
