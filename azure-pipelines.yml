@@ -28,7 +28,7 @@ stages:
         inputs:
           action: 'deploy'
           connectionType: 'kubernetesServiceConnection'
-          kubernetesServiceConnection: 'Kubernetes (minikube)'
+          kubernetesServiceConnection: 'K8s (minikube)'
           namespace: 'project-dev'
           manifests: '$(Build.SourcesDirectory)/manifests-dev/*'
           containers: 'app'
